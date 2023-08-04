@@ -1,1 +1,27 @@
+/*ধরা যাক, একটি মোবাইল ফোন কোম্পানি পোস্টপেইড সংযোগের জন্য প্রতি মাসে 125 টাকা করে নেয়। বিনিমনে, প্রথম 500 মিনিট কলের জন্য কোন চার্জ
+কাটা হয় না। তবে, 501 থেকে 1000 মিনিট পর্যন্ত প্রতি মিনিটে 25 পয়সা এবং 1001 মিনিটের পরে এটি প্রতি মিনিটে 49 পয়সা চার্জ করে। একটি জাভা প্রোগ্রাম লিখুন, 
+যা কোন গ্রাহকের কল সময়কাল মিনিটে ইনপুট হিসেবে গ্রহণ করবে এবং গ্রাহকের প্রতি মাসে কত বিল পরিশোধ করতে হবে তা প্রিন্ট করবে।*/
+import java.util.Scanner;
 
+public class mobileBill{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter using minutes: ");
+        int minutes = input.nextInt();
+        double payableBill;
+        double totalBill;
+
+        if (minutes<=500){
+            System.out.println("Your bill is: 0");
+        } else if ((minutes>500)&&(minutes<=1000)){
+            payableBill = (minutes-500)*0.25;
+            totalBill = 125+payableBill;
+            System.out.println("Total bill: "+totalBill);
+        } else if (minutes>1000) {
+            payableBill = (500 * 0.25) + (minutes - 1000) * 0.49;
+            totalBill = 125 + payableBill;
+            System.out.println("Total bill: " + totalBill);
+        }
+
+    }
+}
