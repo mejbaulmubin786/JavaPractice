@@ -1,1 +1,13 @@
+//একটি জাভা প্রোগ্রাম লিখুন, যা ইনপুট হিসেবে একটি সংখ্যা নেবে এবং সংখ্যার শষ ডিজিটি প্রিন্ট করবে।
+import java.util.Scanner;
 
+public class printLastDigit{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please enter a number: ");
+        String character = input.next();
+        char lastDigit = character.charAt(character.length()-1);
+        System.out.println("Last Digit: "+lastDigit);
+
+    }
+}
